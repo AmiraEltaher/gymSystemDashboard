@@ -6,6 +6,7 @@ use App\Models\Coach;
 use App\Models\Week;
 use App\Traits\Common;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class CoachController extends Controller
@@ -34,7 +35,6 @@ class CoachController extends Controller
      */
     public function create()
     {
-        // $days = Week::select('id', 'day')->get();
         return view('layouts.Addcoach');
     }
 
@@ -46,8 +46,7 @@ class CoachController extends Controller
 
         $messages = $this->messages();
         $data = $request->validate([
-
-            'photoCoach' => 'required|mimes:png,jpg,jepg|max:2048',
+            'photoCoach' => 'required|mimes:png,jpg,jepg',
             'nameCoach' => 'required|string',
             'ageCoach' => 'required|numeric',
             'addresCoach' => 'required|string',
@@ -55,18 +54,35 @@ class CoachController extends Controller
             'timeCoach' => 'required|string',
             'shipCoach' => 'required|string',
             'salaryCoach' => 'required|numeric',
-            'QRCodeCoach' => 'required|string',
             'freeCoach' => 'required|string',
         ],  $messages);
+
         //$data = $request->only($this->columns);
-        $fileName = $this->uploadFile($request->photoCoach, 'assets/img');
-        $data['photoCoach'] =  $fileName;
 
-        $data['QRCodeCoach'] = "code";
 
-        Coach::create($data);
 
-        return redirect("Viewcoach");
+        // Start a database transaction
+        DB::beginTransaction();
+        try {
+            $fileName = $this->uploadFile($request->photoCoach, 'assets/img');
+            $data['photoCoach'] =  $fileName;
+            $data['QRCodeCoach'] = "code";
+            // Perform your database operations within the transaction
+            Coach::create($data);
+
+            // Commit the transaction if all operations succeed
+            DB::commit();
+
+            // Redirect the user or return a success response
+            return redirect('Viewcoach');
+        } catch (\Exception $e) {
+            // Rollback the transaction if any operation fails
+            DB::rollback();
+
+            // Handle the exception (e.g., log the error, display a message)
+            // Redirect the user or return an error response
+            return back()->withError('An error occurred while creating the player.');
+        }
     }
 
     /**
@@ -94,10 +110,10 @@ class CoachController extends Controller
      */
     public function update(Request $request, string $id)
     {
+
         $messages = $this->messages();
         $data = $request->validate([
-
-            'photoCoach' => 'required|mimes:png,jpg,jepg|max:2048',
+            'photoCoach' => 'required|mimes:png,jpg,jepg',
             'nameCoach' => 'required|string',
             'ageCoach' => 'required|numeric',
             'addresCoach' => 'required|string',
@@ -105,17 +121,40 @@ class CoachController extends Controller
             'timeCoach' => 'required|string',
             'shipCoach' => 'required|string',
             'salaryCoach' => 'required|numeric',
-            'QRCodeCoach' => 'required|string',
             'freeCoach' => 'required|string',
         ],  $messages);
+
         //$data = $request->only($this->columns);
-        if ($request->hasFile('photoCoach')) {
-            $fileName = $this->uploadFile($request->photoCoach, 'assets/img');
-            $data['photoCoach'] =  $fileName;
+
+
+
+        // Start a database transaction
+        DB::beginTransaction();
+        try {
+            if ($request->hasFile('photoCoach')) {
+                // Upload the new file and update the 'photoPlayer' field
+                $data['photoCoach'] = $this->uploadFile($request->file('photoCoach'), 'assets/img');
+            }
+
+
+
+            $data['QRCodeCoach'] = "code";
+            // Perform your database operations within the transaction
+            Coach::where('id',$id)->update($data);
+
+            // Commit the transaction if all operations succeed
+            DB::commit();
+
+            // Redirect the user or return a success response
+            return redirect('Viewcoach');
+        } catch (\Exception $e) {
+            // Rollback the transaction if any operation fails
+            DB::rollback();
+
+            // Handle the exception (e.g., log the error, display a message)
+            // Redirect the user or return an error response
+            return back()->withError('An error occurred while creating the player.');
         }
-        $data['QRCodeCoach'] = "code";
-        Coach::where('id', $id)->update($data);
-        return redirect("Viewcoach");
     }
 
     /**
@@ -131,8 +170,6 @@ class CoachController extends Controller
         if (File::exists($filePath)) {
             File::delete($filePath);
         }
-
-
         $coach->delete();
         return redirect('Viewcoach');
     }
@@ -147,8 +184,6 @@ class CoachController extends Controller
             'phoneCoach.required' => 'من فضلك ادخل رقم التليفون',
             'timeCoach.required' => 'من فضلك ادخل مواعيد العمل',
             'shipCoach.required' => 'من فضلك ادخل الوظيفة التدريبية',
-
-
             'salaryCoach.required' => 'من فضلك ادخل الراتب الشهرى',
             'freeCoach.required' => 'من فضلك ادخل الاجازة  ',
 

@@ -91,7 +91,8 @@ class PlayerController extends Controller
             'phonePlayer' => 'required|string',
 
         ],  $messages);
-        // $data = $request->only($this->column);
+
+        $data = $request->only($this->column);
 
         // Check if a new file has been provided
         if ($request->hasFile('photoPlayer')) {
