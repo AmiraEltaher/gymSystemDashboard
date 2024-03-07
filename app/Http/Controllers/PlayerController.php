@@ -54,7 +54,7 @@ class PlayerController extends Controller
         $data['photoPlayer']  = $this->uploadFile($request->photoPlayer, 'assets/img');
 
         Player::create($data);
-        return redirect('Viewplayer');
+        return redirect('players');
     }
 
     /**
@@ -80,10 +80,11 @@ class PlayerController extends Controller
      */
     public function update(Request $request, string $id)
     {
+
         $messages = $this->messages();
         $data = $request->validate([
 
-            'photoPlayer' => 'required|mimes:png,jpg,jepg|max:2048',
+            'photoPlayer' => 'nullable|mimes:png,jpg,jepg|max:2048',
             'namePlayer' => 'required|string',
             'agePlayer' => 'required|numeric',
             'addresPlayer' => 'required|string',
@@ -99,7 +100,7 @@ class PlayerController extends Controller
         }
 
         Player::where('id', $id)->update($data);
-        return redirect('Viewplayer');
+        return redirect('players');
     }
 
     /**
@@ -115,15 +116,18 @@ class PlayerController extends Controller
             File::delete($filePath);
         }
         $player->delete();
-        return redirect('Viewplayer');
+        return redirect('players');
     }
 
 
     public function messages()
     {
         return [
-            'photoPlayer.required' => 'Please insert your image',
-            'namePlayer.required' => 'Please insert your name',
+            'photoPlayer.required' => 'من فضلك ادخل الصورة',
+            'namePlayer.required' => 'من فضلك ادخل الاسم',
+            'agePlayer.required' => 'من فضلك ادخل السن',
+            'addresPlayer.required' => 'من فضلك ادخل العنوان',
+            'phonePlayer.required' => 'من فضلك ادخل رقم التليفون',
 
         ];
     }

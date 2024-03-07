@@ -20,38 +20,43 @@
             <div class="form-group">
                 <label for=""> اضافه صوره </label>
                 <input type="file" name="photoCoach" class="form-control" id="" style="text-align: center">
+                @error('photoCoach')
+                {{$message}}
+                @enderror
             </div>
-            @error('photoCoach')
-            {{$message}}
-            @enderror
+
             <div class="form-group">
                 <label for="exampleInputPassword1">اضافه الاسم</label>
                 <input type="text" name="nameCoach" class="form-control" id="" style="text-align: center" value="{{ $coach->nameCoach }}">
+                @error('nameCoach')
+                {{$message}}
+                @enderror
             </div>
-            @error('nameCoach')
-            {{$message}}
-            @enderror
+
             <div class="form-group">
                 <label for="exampleInputPassword1">اضافه السن</label>
                 <input type="number" name="ageCoach" class="form-control" id="" style="text-align: center" value="{{ $coach->ageCoach }}">
+                @error('ageCoach')
+                {{$message}}
+                @enderror
             </div>
-            @error('ageCoach')
-            {{$message}}
-            @enderror
+
             <div class="form-group">
                 <label for="exampleInputPassword1">اضافه العنوان</label>
                 <input type="text" name="addresCoach" class="form-control" id="" style="text-align: center" value="{{ $coach->addresCoach }}">
+                @error('addresCoach')
+                {{$message}}
+                @enderror
             </div>
-            @error('addresCoach')
-            {{$message}}
-            @enderror
+
             <div class="form-group">
                 <label for="exampleInputPassword1">اضافه رقم الهاتف</label>
                 <input type="text" name="phoneCoach" class="form-control" id="" style="text-align: center" value="{{ $coach->phoneCoach }}">
+                @error('phoneCoach')
+                {{$message}}
+                @enderror
             </div>
-            @error('phoneCoach')
-            {{$message}}
-            @enderror
+
 
         </div>
         <div class="col-md-6">
@@ -62,24 +67,27 @@
                     <option value="صباحي" {{ $coach->timeCoach == 'صباحي' ? 'selected' : '' }}>صباحي</option>
                     <option value="مسائي" {{ $coach->timeCoach == 'مسائي' ? 'selected' : '' }}>مسائي</option>
                 </select>
+                @error('timeCoach')
+                {{$message}}
+                @enderror
             </div>
-            @error('timeCoach')
-            {{$message}}
-            @enderror
+
             <div class="form-group">
                 <label for="exampleInputPassword1"> الوظيفه التدريبيه</label>
                 <input type="text" name="shipCoach" class="form-control" id="" style="text-align: center" value="{{ $coach->shipCoach }}">
+                @error('shipCoach')
+                {{$message}}
+                @enderror
             </div>
-            @error('shipCoach')
-            {{$message}}
-            @enderror
+
             <div class="form-group">
                 <label for="exampleInputPassword1"> الراتب الشهري</label>
                 <input type="number" name="salaryCoach" class="form-control" id="" style="text-align: center" value="{{ $coach->salaryCoach }}">
+                @error('salaryCoach')
+                {{$message}}
+                @enderror
             </div>
-            @error('salaryCoach')
-            {{$message}}
-            @enderror
+
             <div class="form-group">
                 <label for="exampleInputPassword1"> الاجازات الرسميه للمدرب</label>
                 <select id="inputState" name="freeCoach" class="form-control" style="text-align: center">
@@ -91,11 +99,11 @@
                     <option {{ $coach->freeCoach == 'الخميس' ? 'selected' : '' }}>الخميس</option>
                     <option {{ $coach->freeCoach == 'الجمعه' ? 'selected' : '' }}>الجمعه</option>
                 </select>
-
+                @error('freeCoach')
+                {{$message}}
+                @enderror
             </div>
-            @error('freeCoach')
-            {{$message}}
-            @enderror
+
             <div class="form-group">
                 <label for="exampleInputPassword1">الباركود الخاص بك</label>
                 <button type="submit" class="btn  form-control" style="border: solid 1.5px black " name="QRCodeCoach">اظهار الباركود

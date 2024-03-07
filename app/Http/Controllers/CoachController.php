@@ -140,8 +140,17 @@ class CoachController extends Controller
     public function messages()
     {
         return [
-            'photoCoach.required' => 'Please insert your image',
-            'nameCoach.required' => 'Please insert your name',
+            'photoCoach.required' => 'من فضلك ادخل الصورة',
+            'nameCoach.required' => 'من فضلك ادخل الاسم',
+            'ageCoach.required' => 'من فضلك ادخل السن',
+            'addresCoach.required' => 'من فضلك ادخل العنوان',
+            'phoneCoach.required' => 'من فضلك ادخل رقم التليفون',
+            'timeCoach.required' => 'من فضلك ادخل مواعيد العمل',
+            'shipCoach.required' => 'من فضلك ادخل الوظيفة التدريبية',
+
+
+            'salaryCoach.required' => 'من فضلك ادخل الراتب الشهرى',
+            'freeCoach.required' => 'من فضلك ادخل الاجازة  ',
 
         ];
     }

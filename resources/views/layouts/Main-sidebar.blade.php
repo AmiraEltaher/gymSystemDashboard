@@ -16,11 +16,11 @@
                 <ul class="nav nav-second-level">
 
                     <li>
-                        <a href="{{ url('Addplayer') }}">اضافه لاعب جديد</a>
+                        <a href="{{ url('players/create') }}">اضافه لاعب جديد</a>
                     </li>
 
                     <li>
-                        <a href="{{ url('Viewplayer') }}">عرض جدول اللاعبين</a>
+                        <a href="{{ url('players') }}">عرض جدول اللاعبين</a>
                     </li>
 
                 </ul>
