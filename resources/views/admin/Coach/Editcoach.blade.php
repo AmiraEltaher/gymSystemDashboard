@@ -1,6 +1,6 @@
-@extends('layouts.Head')
-@include('layouts.Main-header')
-@include('layouts.Main-sidebar')
+@extends('admin.Head')
+@include('admin.Main-header')
+@include('admin.Main-sidebar')
 
 
 {{-- content --}}
@@ -129,7 +129,7 @@
 
 
 
-@include('layouts.Footer')
+@include('admin.Footer')
 
 
-@include('layouts.Footerscripts')
+@include('admin.Footerscripts')

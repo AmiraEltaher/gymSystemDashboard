@@ -1,6 +1,6 @@
-@extends('layouts.Head')
-@include('layouts.Main-header')
-@include('layouts.Main-sidebar')
+@extends('admin.Head')
+@include('admin.Main-header')
+@include('admin.Main-sidebar')
 
 
 
@@ -43,6 +43,6 @@
     </table>
 </div>
 
-@include('layouts.Footerscripts')
+@include('admin.Footerscripts')
 
 {{-- @include('layouts.Footer') --}}

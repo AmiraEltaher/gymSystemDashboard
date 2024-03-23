@@ -17,4 +17,15 @@ class Player extends Model
         'addresPlayer',
         'phonePlayer',
     ];
+
+   /* public function winners ()
+    {
+       return $this->hasMany(Winner::class);
+    }*/
+
+    public function champions (){
+
+        return $this->belongsToMany(Champion::class, 'winners','player_id','championship_id');
+
+    }
 }

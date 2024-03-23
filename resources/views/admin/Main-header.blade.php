@@ -1,4 +1,4 @@
-@extends('layouts.Head')
+@extends('admin.Head')
 
 <div class="navbar navbar-inverse navbar-fixed-top" style="background: black;padding: 7px 0px">
     <div class="adjust-nav">

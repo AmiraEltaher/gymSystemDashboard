@@ -1,4 +1,4 @@
-@extends('layouts.Head')
+@extends('admin.Head')
 
 <nav class="navbar-default navbar-side " role="navigation">
     <div class="sidebar-collapse">

@@ -32,8 +32,8 @@
 </head>
 
 <body>
-    @include('layouts.Main-header')
-    @include('layouts.Main-sidebar')
+    @include('admin.Main-header')
+    @include('admin.Main-sidebar')
 
 
 
@@ -81,4 +81,4 @@
 </body>
 
 </html>
-@include('layouts.Footerscripts')
+@include('admin.Footerscripts')

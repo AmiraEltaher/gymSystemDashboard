@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\ChampionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CoachController;
+use App\Http\Controllers\OfferController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\WinnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,3 +70,10 @@ PUT/PATCH for updating data.
 DELETE for deleting data.
 To follow best practices and adhere to RESTful principles, you should use a POST or DELETE request for delete actions. Laravel's resourceful routes automatically map DELETE requests to the destroy method of the controller, ensuring adherence to RESTful conventions.
  */
+
+
+ Route::resource('offers', OfferController::class);
+
+ Route::resource('products', ProductController::class);
+ Route::resource('champions', ChampionController::class);
+ Route::resource('winners', WinnerController::class);

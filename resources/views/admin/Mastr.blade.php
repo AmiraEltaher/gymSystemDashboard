@@ -2,15 +2,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    @extends('layouts.Head')
+    @extends('admin.Head')
 </head>
 
 <body>
 
     @include('layouts.Main-header')
     <!-- /. NAV TOP  -->
-    @include('layouts.Main-sidebar')
-    @include('layouts.Footerscripts')
+    @include('admin.Main-sidebar')
+    @include('admin.Footerscripts')
 
 
 

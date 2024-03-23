@@ -1,6 +1,6 @@
-@extends('layouts.Head')
-@include('layouts.Main-header')
-@include('layouts.Main-sidebar')
+@extends('admin.Head')
+@include('admin.Main-header')
+@include('admin.Main-sidebar')
 
 {{-- content --}}
 
@@ -18,7 +18,7 @@
                 <label for=""> اضافه صوره </label>
                 <input type="file" name="photoPlayer" class="form-control" spellcheck="false" id="" style="text-align: center">
                 @error('photoPlayer')
-                {{$message}}
+                <span style="color: red;">{{$message}}</span>
                 @enderror
             </div>
 
@@ -26,7 +26,7 @@
                 <label for="exampleInputPassword1">اضافه الاسم</label>
                 <input type="text" name="namePlayer" class="form-control" spellcheck="false" id="" style="text-align: center" value="{{old('namePlayer')}}">
                 @error('namePlayer')
-                {{$message}}
+                <span style="color: red;">{{$message}}</span>
                 @enderror
             </div>
 
@@ -34,7 +34,7 @@
                 <label for="exampleInputPassword1">اضافه السن</label>
                 <input type="number" name="agePlayer" class="form-control" id="" style="text-align: center" value="{{old('agePlayer')}}">
                 @error('agePlayer')
-                {{$message}}
+                <span style="color: red;">{{$message}}</span>
                 @enderror
             </div>
 
@@ -45,7 +45,7 @@
                 <label for="exampleInputEmail1">اضافه العنوان</label>
                 <input type="text" name="addresPlayer" class="form-control" id="" style="text-align: center" value="{{old('addresPlayer')}}">
                 @error('addresPlayer')
-                {{$message}}
+                <span style="color: red;">{{$message}}</span>
                 @enderror
             </div>
 
@@ -53,7 +53,7 @@
                 <label for="exampleInputPassword1">اضافه رقم الهاتف</label>
                 <input type="text" name="phonePlayer" class="form-control" id="" style="text-align: center" value="{{old('phonePlayer')}}">
                 @error('phonePlayer')
-                {{$message}}
+                <span style="color: red;">{{$message}}</span>
                 @enderror
             </div>
 
@@ -84,6 +84,6 @@
 
 
 
-@include('layouts.Footerscripts')
+@include('admin.Footerscripts')
 
 {{-- @include('layouts.Footer') --}}

@@ -23,7 +23,7 @@ class PlayerController extends Controller
     public function index()
     {
         $players = Player::get();
-        return view('layouts.Viewplayer', compact('players'));
+        return view('admin.Player.Viewplayer', compact('players'));
     }
 
     /**
@@ -31,7 +31,7 @@ class PlayerController extends Controller
      */
     public function create()
     {
-        return view('layouts.Addplayer');
+        return view('admin.Player.Addplayer');
     }
 
     /**

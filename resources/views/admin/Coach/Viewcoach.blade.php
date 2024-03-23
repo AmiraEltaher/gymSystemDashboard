@@ -1,6 +1,6 @@
-@extends('layouts.Head')
-@include('layouts.Main-header')
-@include('layouts.Main-sidebar')
+@extends('admin.Head')
+@include('admin.Main-header')
+@include('admin.Main-sidebar')
 
 
 <div class="col-md-8" style="margin-top: 100px">
@@ -48,4 +48,4 @@
 
 
 {{-- @include('layouts.Footer') --}}
-@include('layouts.Footerscripts')
+@include('admin.Footerscripts')
