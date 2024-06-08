@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @extends('layouts.master')
 @section('css')
     <!--  Owl-carousel css-->
@@ -118,43 +117,3 @@
     <script src="{{ URL::asset('assets/js/index.js') }}"></script>
     <script src="{{ URL::asset('assets/js/jquery.vmap.sampledata.js') }}"></script>
 @endsection
-=======
-@extends('admin.Head')
-@include('admin.Main-header')
-@include('admin.Main-sidebar')
-
-
-
-<div class="col-md-8" style="margin-top: 100px">
-    <div>
-        <h2 class="text-center" style="font-weight: bolder;background-color: black;color: white; padding: 10px 0px;border-radius: 15px">
-            عرض البطولة</h2>
-    </div>
-    <hr style="width: 50%;border: solid 3px blue" />
-</div>
-
-<div class="col-md-8">
-    <table class="table" border="1.5">
-        <thead style="background-color: black; color: white; text-align: center">
-            <tr>
-                <th scope="col">اسم البطولة</th>
-
-            </tr>
-        </thead>
-        <tbody>
-
-            <tr style="text-align: center">
-
-                <td>{{ $champion->championName}}</td>
-
-
-            </tr>
-
-        </tbody>
-    </table>
-</div>
-
-@include('admin.Footerscripts')
-
-{{-- @include('layouts.Footer') --}}
->>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea

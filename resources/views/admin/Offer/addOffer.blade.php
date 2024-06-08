@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @extends('layouts.master')
 @section('css')
     <!--  Owl-carousel css-->
@@ -123,7 +122,7 @@
                     جديد</button>
             </div>
         </form>
-=======
+
 @extends('admin.Head')
 @include('admin.Main-header')
 @include('admin.Main-sidebar')
@@ -199,7 +198,6 @@
                 جديد</button>
         </div>
     </form>
->>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
 
 
 
@@ -208,18 +206,14 @@
 
 
 
-<<<<<<< HEAD
     </div>
-=======
 </div>
->>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
 
 
 
 
 
 
-<<<<<<< HEAD
     @include('admin.Footerscripts')
 
     {{-- @include('layouts.Footer') --}}
@@ -254,8 +248,3 @@
     <script src="{{ URL::asset('assets/js/index.js') }}"></script>
     <script src="{{ URL::asset('assets/js/jquery.vmap.sampledata.js') }}"></script>
 @endsection
-=======
-@include('admin.Footerscripts')
-
-{{-- @include('layouts.Footer') --}}
->>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea

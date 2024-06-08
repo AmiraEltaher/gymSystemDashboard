@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @extends('layouts.master')
 @section('css')
     <!--  Owl-carousel css-->
@@ -133,7 +132,6 @@
                     <td><a href="{{route('players.destroy', ['player' => $player->id])}}"><i class="fa-solid fa-trash" style="font-size: 2.5rem;color: red"></i></a> </td>
                 --}}
 
-<<<<<<< HEAD
                         <td>
                             <form action="{{ route('players.destroy', ['player' => $player->id]) }}" method="POST">
                                 @csrf
@@ -157,7 +155,7 @@
 
 
     {{-- <script>
-=======
+
                 <td>
                     <form action="{{ route('players.destroy', ['player' => $player->id]) }}" method="POST" >
                         @csrf
@@ -176,13 +174,12 @@
 @include('admin.Footerscripts')
 
 {{-- <script>
->>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
+
     function confirmDelete() {
         return confirm("هل تريد مسح هذا اللاعب؟!");
     }
 </script> --}}
 
-<<<<<<< HEAD
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
         function confirmDelete() {
@@ -250,33 +247,3 @@
     <script src="{{ URL::asset('assets/js/index.js') }}"></script>
     <script src="{{ URL::asset('assets/js/jquery.vmap.sampledata.js') }}"></script>
 @endsection
-=======
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script>
-    function confirmDelete() {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#3085d6',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                document.getElementById('deleteForm' + playerId).submit();
-                // Handle delete action here, e.g., submit form or make AJAX request
-                // For example:
-                // document.getElementById('deleteForm').submit();
-                // or
-                // deleteRecord();
-                Swal.fire(
-                    'Deleted!',
-                    'Your record has been deleted.',
-                    'success'
-                )
-            }
-        });
-    }
-</script>
->>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
