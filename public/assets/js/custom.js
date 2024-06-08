@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(function() {
 	'use strict'
 	
@@ -397,3 +398,60 @@ $(function() {
 	
 });
 	
+=======
+
+
+
+/*=============================================================
+    Authour URI: www.binarytheme.com
+    License: Commons Attribution 3.0
+
+    http://creativecommons.org/licenses/by/3.0/
+
+    100% To use For Personal And Commercial Use.
+    IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
+
+    ========================================================  */
+
+
+(function ($) {
+    "use strict";
+    var mainApp = {
+
+        main_fun: function () {
+            /*====================================
+            METIS MENU
+            ======================================*/
+            $('#main-menu').metisMenu();
+
+            /*====================================
+              LOAD APPROPRIATE MENU BAR
+           ======================================*/
+            $(window).bind("load resize", function () {
+                if ($(this).width() < 768) {
+                    $('div.sidebar-collapse').addClass('collapse')
+                } else {
+                    $('div.sidebar-collapse').removeClass('collapse')
+                }
+            });
+
+
+
+        },
+
+        initialization: function () {
+            mainApp.main_fun();
+
+        }
+
+    }
+    // Initializing ///
+
+    $(document).ready(function () {
+        mainApp.main_fun();
+    });
+
+}(jQuery));
+
+
+>>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea

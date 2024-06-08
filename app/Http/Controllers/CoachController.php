@@ -27,7 +27,11 @@ class CoachController extends Controller
     public function index()
     {
         $coaches = Coach::get();
+<<<<<<< HEAD
         return view('admin.Coach.Viewcoach', compact('coaches'));
+=======
+        return view('layouts.Viewcoach', compact('coaches'));
+>>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
     }
 
     /**
@@ -35,7 +39,11 @@ class CoachController extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD
         return view('admin.Coach.Addcoach');
+=======
+        return view('layouts.Addcoach');
+>>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
     }
 
     /**
@@ -68,14 +76,21 @@ class CoachController extends Controller
             $data['photoCoach'] =  $fileName;
             $data['QRCodeCoach'] = "code";
             // Perform your database operations within the transaction
+<<<<<<< HEAD
 
+=======
+>>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
             Coach::create($data);
 
             // Commit the transaction if all operations succeed
             DB::commit();
 
             // Redirect the user or return a success response
+<<<<<<< HEAD
             return redirect('coaches');
+=======
+            return redirect('Viewcoach');
+>>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
         } catch (\Exception $e) {
             // Rollback the transaction if any operation fails
             DB::rollback();
@@ -93,7 +108,11 @@ class CoachController extends Controller
     {
 
         $coach = Coach::findOrFail($id);
+<<<<<<< HEAD
         return view('admin.Coach.Showcoach', compact('coach'));
+=======
+        return view('layouts.Showcoach', compact('coach'));
+>>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
     }
 
     /**
@@ -103,7 +122,11 @@ class CoachController extends Controller
     {
         $coach = Coach::findOrFail($id);
 
+<<<<<<< HEAD
         return view('admin.Coach.Editcoach', compact('coach'));
+=======
+        return view('layouts.Editcoach', compact('coach'));
+>>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
     }
 
     /**
@@ -172,7 +195,11 @@ class CoachController extends Controller
             File::delete($filePath);
         }
         $coach->delete();
+<<<<<<< HEAD
         return redirect('admin.Coach.Viewcoach');
+=======
+        return redirect('Viewcoach');
+>>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
     }
 
     public function messages()

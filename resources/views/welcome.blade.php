@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -170,3 +171,7 @@
         </div>
     </body>
 </html>
+=======
+@extends('layouts.Mastr')
+
+>>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea

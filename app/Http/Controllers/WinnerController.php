@@ -42,6 +42,7 @@ class WinnerController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         // Retrieve the player ID from the request data
         $playerId = $request->input('player_id');
 
@@ -56,20 +57,34 @@ class WinnerController extends Controller
             // Attach the champion to the player
             $player->champions()->attach($championId);
         }
+=======
+        $data = $request->only($this->column);
+        Winner::create($data);
+>>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
 
         return redirect('winners');
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
     /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
 
+<<<<<<< HEAD
         $player = player::with( 'champions')->findOrFail($id);
 
         return view('admin.Winners.showWinner', compact('player'));
+=======
+        $player = Player::findOrFail($id);
+        $champions = Champion::select('id','championName')->get();
+
+        return view('admin.Winners.showWinner', compact('player','champions'));
+>>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
     }
 
     /**
@@ -77,8 +92,14 @@ class WinnerController extends Controller
      */
     public function edit(string $id)
     {
+<<<<<<< HEAD
         $player = player::findOrFail($id);
         $champions = Champion::select('id','championName')->get();
+=======
+        $player = Player::findOrFail($id);
+        $champions = Champion::select('id','championName')->get();
+
+>>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
         return view('admin.Winners.editWinner', compact('player','champions'));
 
     }
@@ -86,6 +107,7 @@ class WinnerController extends Controller
     /**
      * Update the specified resource in storage.
      */
+<<<<<<< HEAD
     public function update(Request $request, $id)
     {
         // Retrieve the player by ID
@@ -102,6 +124,13 @@ class WinnerController extends Controller
 
 
 
+=======
+    public function update(Request $request, string $id)
+    {
+        //
+    }
+
+>>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
     /**
      * Remove the specified resource from storage.
      */

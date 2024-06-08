@@ -31,8 +31,12 @@ class PlayerController extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD
         $players = Player::get();
         return view('admin.Player.add', compact('players'));
+=======
+        return view('admin.Player.Addplayer');
+>>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
     }
 
     /**
@@ -64,7 +68,11 @@ class PlayerController extends Controller
     public function show(string $id)
     {
         $player = Player::findOrFail($id);
+<<<<<<< HEAD
         return view('admin.Player.Showplayer', compact('player'));
+=======
+        return view('layouts.Showplayer', compact('player'));
+>>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
     }
 
     /**
@@ -73,7 +81,11 @@ class PlayerController extends Controller
     public function edit(string $id)
     {
         $player = Player::findOrFail($id);
+<<<<<<< HEAD
         return view('admin.Player.Editplayer', compact('player'));
+=======
+        return view('layouts.Editplayer', compact('player'));
+>>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
     }
 
     /**
@@ -133,4 +145,8 @@ class PlayerController extends Controller
 
         ];
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea

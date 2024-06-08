@@ -29,8 +29,11 @@ class Player extends Model
 
     }
 
+
+
     public function subscriptions()
     {
-        return $this->belongsToMany(Subscription::class, 'player_subscription_offer');
+        return $this->hasMany(Subscription::class);
     }
+
 }

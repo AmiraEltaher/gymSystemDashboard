@@ -17,6 +17,7 @@ class Offer extends Model
         'offerFeatures',
     ];
 
+
     public function subscription()
     {
         return $this->belongsTo(Subscription::class);

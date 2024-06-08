@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
+            $table->string('player_id');
+            $table->string('subtype');
+            $table->string('offers_id')->nullable();
+            $table->integer('basic_amount');
+            $table->integer('basic_paid');
+            $table->integer('basic_rest');
+            $table->string('start_subscription');
+            $table->string('end_subscription');
             $table->timestamps();
         });
     }

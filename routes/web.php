@@ -7,8 +7,10 @@ use App\Http\Controllers\OfferController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\WinnerController;
+
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SubscriptionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +27,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 // Route::get('Addcoach', [CoachController::class, 'create'])->name('Addcoach');
 // Route::post('storecoach', [CoachController::class, 'store'])->name('storecoach');
 // Route::get('Viewcoach', [CoachController::class, 'index'])->name('Viewcoach');
@@ -35,6 +38,17 @@ Route::get('/', function () {
 
 //route resource
 Route::resource('coaches', CoachController::class);
+
+Route::get('Addcoach', [CoachController::class, 'create'])->name('Addcoach');
+Route::post('storecoach', [CoachController::class, 'store'])->name('storecoach');
+Route::get('Viewcoach', [CoachController::class, 'index'])->name('Viewcoach');
+Route::get('editCoach/{id}', [CoachController::class, 'edit'])->name('editCoach');
+Route::put('updateCoach/{id}', [CoachController::class, 'update'])->name('updateCoach');
+Route::get('deleteCoach/{id}', [CoachController::class, 'destroy'])->name('deleteCoach');
+Route::get('showCoach/{id}', [CoachController::class, 'show'])->name('showCoach');
+
+//route resource
+
 Route::resource('players', PlayerController::class);
 /*
 Verb        URI                    Action             Route Name
