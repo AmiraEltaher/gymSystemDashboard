@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @extends('layouts.master')
 @section('css')
     <!--  Owl-carousel css-->
@@ -146,7 +145,8 @@
 
 <div class="col-md-8" style="margin-top: 100px">
     <div>
-        <h2 class="text-center" style="font-weight: bolder;background-color: black;color: white; padding: 10px 0px;border-radius: 15px">
+        <h2 class="text-center"
+            style="font-weight: bolder;background-color: black;color: white; padding: 10px 0px;border-radius: 15px">
             عرض اللاعب</h2>
     </div>
     <hr style="width: 50%;border: solid 3px blue" />
@@ -168,12 +168,12 @@
         <tbody>
 
             <tr style="text-align: center">
-                <th scope="row">{{ $player->id}}</th>
-                <td><img src="{{ asset('assets/img/'.$player->photoPlayer )}}" width="70" height="70"></td>
-                <td>{{ $player->namePlayer}}</td>
-                <td>{{ $player->phonePlayer}}</td>
-                <td>{{ $player->agePlayer}}</i></a></td>
-                <td>{{ $player->addresPlayer}}</td>
+                <th scope="row">{{ $player->id }}</th>
+                <td><img src="{{ asset('assets/img/' . $player->photoPlayer) }}" width="70" height="70"></td>
+                <td>{{ $player->namePlayer }}</td>
+                <td>{{ $player->phonePlayer }}</td>
+                <td>{{ $player->agePlayer }}</i></a></td>
+                <td>{{ $player->addresPlayer }}</td>
 
 
                 <td>Otto</td>
@@ -186,4 +186,3 @@
 @include('admin.Footerscripts')
 
 {{-- @include('layouts.Footer') --}}
->>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea

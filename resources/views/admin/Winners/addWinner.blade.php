@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @extends('layouts.master')
 @section('css')
     <!--  Owl-carousel css-->
@@ -91,83 +90,77 @@
                 </button>
             </div>
         </form>
-=======
-@extends('admin.Head')
-@include('admin.Main-header')
-@include('admin.Main-sidebar')
 
-{{-- content --}}
+        @extends('admin.Head')
+        @include('admin.Main-header')
+        @include('admin.Main-sidebar')
 
-<div class="col-md-8" style="margin-top: 100px">
-    <div class="col-md-12">
-        <h2 class="text-center" style="font-weight: bolder;background-color: black;color: white; padding: 10px 0px;border-radius: 15px">
-            اضافه لاعب جديد</h2>
-        <hr style="width: 50%;border: solid 3px blue" />
-    </div>
+        {{-- content --}}
 
-    <form method="POST" action="{{ route('winners.store')}}" enctype="multipart/form-data">
-        @csrf
-        <div class="col-md-6">
+        <div class="col-md-8" style="margin-top: 100px">
+            <div class="col-md-12">
+                <h2 class="text-center"
+                    style="font-weight: bolder;background-color: black;color: white; padding: 10px 0px;border-radius: 15px">
+                    اضافه لاعب جديد</h2>
+                <hr style="width: 50%;border: solid 3px blue" />
+            </div>
 
-            <label for="">  اسم اللاعب </label>
-            <select class="form-control" name="player_id" id="">
+            <form method="POST" action="{{ route('winners.store') }}" enctype="multipart/form-data">
+                @csrf
+                <div class="col-md-6">
 
-                <option value=" ">Select Player</option>
-                @foreach($players as $player)
-                <option value="{{ $player->id }}"> {{$player->namePlayer }}</option>
-                @endforeach
+                    <label for=""> اسم اللاعب </label>
+                    <select class="form-control" name="player_id" id="">
 
-            </select>
-            <label for="">  اسم البطولة </label>
-            <select class="form-control" name="championship_id" id="">
-                <option value=" ">Select Champion</option>
-                @foreach($champions as $Champion)
-                <option value="{{ $Champion->id }}"> {{$Champion->championName }}</option>
-                @endforeach
+                        <option value=" ">Select Player</option>
+                        @foreach ($players as $player)
+                            <option value="{{ $player->id }}"> {{ $player->namePlayer }}</option>
+                        @endforeach
 
-            </select>
+                    </select>
+                    <label for=""> اسم البطولة </label>
+                    <select class="form-control" name="championship_id" id="">
+                        <option value=" ">Select Champion</option>
+                        @foreach ($champions as $Champion)
+                            <option value="{{ $Champion->id }}"> {{ $Champion->championName }}</option>
+                        @endforeach
+
+                    </select>
 
 
+                </div>
+
+
+
+
+
+                <div class="col-md-12">
+                    <button type="submit" name="add-player" class="btn btn-primary form-control" style="margin: auto">اضافه
+                    </button>
+                </div>
+            </form>
+
+
+
+
+
+
+
+
+
+            <<<<<<< HEAD </div>
+                =======
         </div>
-
-
-
-
-
-        <div class="col-md-12">
-            <button type="submit" name="add-player" class="btn btn-primary form-control" style="margin: auto">اضافه
-                </button>
-        </div>
-    </form>
->>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
+        >>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
 
 
 
 
 
 
+        <<<<<<< HEAD @include('admin.Footerscripts') {{-- @include('layouts.Footer') --}} <!-- row closed -->
 
-
-<<<<<<< HEAD
-    </div>
-=======
-</div>
->>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
-
-
-
-
-
-
-<<<<<<< HEAD
-
-    @include('admin.Footerscripts')
-
-    {{-- @include('layouts.Footer') --}}
-
-    <!-- row closed -->
-
-    <!-- /row -->
+            <!-- /row -->
     </div>
     </div>
     <!-- Container closed -->

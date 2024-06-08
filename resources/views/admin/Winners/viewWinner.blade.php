@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @extends('layouts.master')
 @section('css')
     <!--  Owl-carousel css-->

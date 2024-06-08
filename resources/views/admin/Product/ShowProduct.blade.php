@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @extends('layouts.master')
 @section('css')
     <!--  Owl-carousel css-->
@@ -125,7 +124,6 @@
     <script src="{{ URL::asset('assets/js/index.js') }}"></script>
     <script src="{{ URL::asset('assets/js/jquery.vmap.sampledata.js') }}"></script>
 @endsection
-=======
 @extends('admin.Head')
 @include('admin.Main-header')
 @include('admin.Main-sidebar')
@@ -134,7 +132,8 @@
 
 <div class="col-md-8" style="margin-top: 100px">
     <div>
-        <h2 class="text-center" style="font-weight: bolder;background-color: black;color: white; padding: 10px 0px;border-radius: 15px">
+        <h2 class="text-center"
+            style="font-weight: bolder;background-color: black;color: white; padding: 10px 0px;border-radius: 15px">
             عرض المنتج</h2>
     </div>
     <hr style="width: 50%;border: solid 3px blue" />
@@ -148,17 +147,17 @@
                 <th scope="col">صوره المنتج</th>
                 <th scope="col">وصف المنتج</th>
                 <th scope="col"> سعر المنتج</th>
-                <th scope="col">  الخصم</th>
+                <th scope="col"> الخصم</th>
             </tr>
         </thead>
         <tbody>
 
             <tr style="text-align: center">
-                <td>{{ $product->productName}}</td>
-                <td><img src="{{ asset('assets/img/'.$product->productImage )}}" width="70" height="70"></td>
-                <td>{{ $product->productDescription}}</td>
-                <td>{{ $product->productCost}}</td>
-                <td>{{ $product->productImage}}</td>
+                <td>{{ $product->productName }}</td>
+                <td><img src="{{ asset('assets/img/' . $product->productImage) }}" width="70" height="70"></td>
+                <td>{{ $product->productDescription }}</td>
+                <td>{{ $product->productCost }}</td>
+                <td>{{ $product->productImage }}</td>
 
 
 
@@ -171,4 +170,3 @@
 @include('admin.Footerscripts')
 
 {{-- @include('layouts.Footer') --}}
->>>>>>> f03a76832a558df044e79c3b3ae826137e7270ea
